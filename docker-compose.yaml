@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  app:
+    depends_on:
+      - db
+    build: .
+    container_name: Library
+    command: uvicorn Library.main:app
+    ports:
+      - "8000:8000"
+  db:
+    container_name: library
+    image: keinos/sqlite3
+    restart: always
+    ports:
+      - "5436:5436"

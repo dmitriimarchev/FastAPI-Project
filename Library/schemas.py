@@ -1,0 +1,10 @@
+# Pydantic
+from pydantic import BaseModel
+
+
+class Book(BaseModel):
+    title: str
+    author: str
+    description: str
+    in_stock: bool
+
